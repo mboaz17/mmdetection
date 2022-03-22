@@ -11,7 +11,7 @@ model = dict(
             num_classes=1,  # 80
     )),
     backbone=dict(
-        frozen_stages=1),
+        frozen_stages=0),
     test_cfg=dict(
         rpn=dict(
             nms_pre=1000,
@@ -29,7 +29,7 @@ model = dict(
 
 ### schedule
 # optimizer
-optimizer = dict(type='SGD', lr=0.05, momentum=0.9, weight_decay=0.0001)  # lr=0.02
+optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001)  # lr=0.02
 optimizer_config = dict(grad_clip=None)
 # learning policy
 lr_config = dict(
@@ -40,7 +40,7 @@ lr_config = dict(
     step=[10000])
 runner = dict(type='EpochBasedRunner', max_epochs=50)
 
-work_dir = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/1cat_1image_exp1'
+work_dir = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/1cat_1image_frozen0'
 
 ### runtime
 checkpoint_config = dict(interval=1)

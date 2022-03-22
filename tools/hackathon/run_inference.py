@@ -4,11 +4,19 @@ import os
 import glob
 
 if 1:  # fasterrcnn
-    config_file = '../../configs/hackathon/faster_rcnn_r50_fpn_1x_car_damage_1cat.py'
-    checkpoint_file = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/overfit_1cat_exp1/epoch_15.pth'
+    if 0:
+        config_file = '../../configs/hackathon/faster_rcnn_r50_fpn_1x_car_damage_1cat.py'
+        checkpoint_file = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/overfit_1cat_exp1/epoch_15.pth'
+    else:
+        config_file = '../../configs/hackathon/faster_rcnn_r50_fpn_1x_car_damage_5cat.py'
+        checkpoint_file = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/overfit_5cat_exp1/epoch_15.pth'
 else:  # retinanet
-    config_file = '../../configs/hackathon/retinanet_r50_fpn_1x_car_damage_1cat.py'
-    checkpoint_file = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/overfit_1cat_exp2/epoch_15.pth'
+    if 0:
+        config_file = '../../configs/hackathon/retinanet_r50_fpn_1x_car_damage_1cat.py'
+        checkpoint_file = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/overfit_1cat_exp2/epoch_15.pth'
+    else:
+        config_file = '../../configs/hackathon/retinanet_r50_fpn_1x_car_damage_5cat.py'
+        checkpoint_file = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/overfit_5cat_exp2/epoch_15.pth'
 
 
 # build the model from a config file and a checkpoint file

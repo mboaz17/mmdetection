@@ -35,8 +35,8 @@ lr_config = dict(
     warmup='linear',
     warmup_iters=500,
     warmup_ratio=0.001,
-    step=[3, 6])
-runner = dict(type='EpochBasedRunner', max_epochs=12)
+    step=[8, 12])
+runner = dict(type='EpochBasedRunner', max_epochs=15)
 
 work_dir = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/overfit_5cat_exp1'
 
@@ -54,7 +54,7 @@ custom_hooks = [dict(type='NumClassCheckHook')]
 
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-load_from = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/overfit_1cat_exp1/epoch_12.pth'
+load_from = '/home/dalya/PycharmProjects/mmdet/mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth'
 resume_from = None
 workflow = [('train', 1)]
 

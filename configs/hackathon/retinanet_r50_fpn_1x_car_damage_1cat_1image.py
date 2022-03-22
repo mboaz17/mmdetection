@@ -8,7 +8,7 @@ _base_ = [
 model = dict(
     type='RetinaNet',
     backbone=dict(
-        frozen_stages=1),
+        frozen_stages=0),
     bbox_head=dict(
         num_classes=1),  # 80),
     # model training and testing settings
@@ -16,7 +16,7 @@ model = dict(
         nms_pre=1000,
         min_bbox_size=0,
         score_thr=0.05,
-        nms=dict(type='nms', iou_threshold=0.5),
+        nms=dict(type='nms', iou_threshold=0.05),
         max_per_img=100))
 
 
@@ -34,7 +34,7 @@ lr_config = dict(
     step=[10000])
 runner = dict(type='EpochBasedRunner', max_epochs=50)
 
-work_dir = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/1cat_1image_exp2'
+work_dir = '/home/dalya/PycharmProjects/mmdet/mmdetection/results/1cat_1image_frozen0'
 
 ### runtime
 checkpoint_config = dict(interval=1)
