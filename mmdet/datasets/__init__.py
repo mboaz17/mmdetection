@@ -17,6 +17,7 @@ from .wider_face import WIDERFaceDataset
 from .xml_style import XMLDataset
 
 from .car_damage import CarDamageDataset
+from .raccoon import RaccoonDataset
 
 __all__ = [
     'CustomDataset', 'XMLDataset', 'CocoDataset', 'DeepFashionDataset',
@@ -29,4 +30,4 @@ __all__ = [
     'OpenImagesDataset', 'OpenImagesChallengeDataset'
 ]
 
-__all__ += ['CarDamageDataset']
+__all__ += ['CarDamageDataset', 'RaccoonDataset']
